@@ -1,25 +1,25 @@
-const input = document.querySelector("input");
+const input = document.querySelector<HTMLInputElement>("input");
 const paragraph = document.querySelector("p");
 
 const total = localStorage.getItem("total");
-if (input && total) {
+
+if (input && total !== null) {
   input.value = total;
-  calcularGanho(Number(input.value));
+  calcularGanho(Number(total));
 }
 
-function calcularGanho(valorDigitado: number) {
+function calcularGanho(valor: number) {
   if (paragraph) {
-    paragraph.innerText = `Ganho Total: ${Number(valorDigitado * 1.2)}`;
+    paragraph.innerText = `Ganho Total: ${valor * 1.2}`;
   }
 }
 
 function totalMudou() {
   if (input) {
-    localStorage.setItem("total", input.value);
-    calcularGanho(Number(input.value));
+    const valor = Number(input.value);
+    localStorage.setItem("total", valor.toString());
+    calcularGanho(valor);
   }
 }
 
-if (input) {
-  input.addEventListener("keyup", totalMudou);
-}
+input?.addEventListener("keyup", totalMudou);
