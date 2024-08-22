@@ -9,6 +9,8 @@ if (input && total !== null) {
 }
 
 function calcularGanho(valor: number) {
+
+  
   if (paragraph) {
     paragraph.innerText = `Ganho Total: ${valor * 1.2}`;
   }
