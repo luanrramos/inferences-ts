@@ -8,6 +8,7 @@ if (input && total !== null) {
   calcularGanho(Number(total));
 }
 
+
 function calcularGanho(valor: number) {
 
   
