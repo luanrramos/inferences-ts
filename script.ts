@@ -3,6 +3,8 @@ const paragraph = document.querySelector("p");
 
 const total = localStorage.getItem("total");
 
+
+
 if (input && total !== null) {
   input.value = total;
   calcularGanho(Number(total));
